@@ -3,7 +3,7 @@ from logging import Logger, getLogger
 
 logger: Logger = getLogger(__name__)
 
-from pages.signup_page import SignupPage
+from pages.signup_page import LoginPage
 from enums.constants import Url, Text, Title
 
 def test_signup_correct(page: Page):
@@ -16,8 +16,8 @@ def test_signup_correct(page: Page):
     expect(page).to_have_url(Url.SIGNUP.value)
     expect(page).to_have_title(Title.SIGNUP.value)
     # Fill the sign up form
-    signup_page = SignupPage(page)
-    signup_page.enter_signup_name("Belal")
-    signup_page.enter_signup_email("belal@domain.com")
+    login_page = LoginPage(page)
+    login_page.enter_signup_name("Belal")
+    login_page.enter_signup_email("belal@domain.com")
     # Click sign up
-    signup_page.click_signup()
+    login_page.click_signup()

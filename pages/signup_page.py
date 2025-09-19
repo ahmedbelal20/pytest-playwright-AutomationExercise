@@ -2,7 +2,7 @@ from playwright.sync_api import Page, Locator
 
 
 
-class SignupPage():
+class LoginPage():
 
     def __init__(self, page: Page) -> None:
         self.page = page
