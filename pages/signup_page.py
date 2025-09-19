@@ -1,21 +1,20 @@
 from playwright.sync_api import Page, Locator
 
 
-
-class LoginPage():
+class SignupPage():
 
     def __init__(self, page: Page) -> None:
         self.page = page
         self.signup_form: Locator = page.locator("form[action='/signup']")
-        self.signup_name: Locator = self.signup_form.locator("input[data-qa='signup-name']")
-        self.signup_email: Locator = self.signup_form.locator("input[data-qa='signup-email']")
-        self.signup_button: Locator = self.signup_form.locator("button[data-qa='signup-button']")
+        self.gender_male_button: Locator = self.signup_form.locator("input[type='radio'][name='title'][id='id_gender1'][value='Mr']")
+        self.gender_female_button: Locator = self.signup_form.locator("input[type='radio'][name='title'][id='id_gender2'][value='Mrs']")
+        self.signup_password: Locator = self.signup_form.locator("input[data-qa='password']")
 
-    def enter_signup_name(self, name: str) -> None:
-        self.signup_name.fill(name)
+    def select_gender_male(self) -> None:
+        self.gender_male_button.click()
 
-    def enter_signup_email(self, email: str) -> None:
-        self.signup_email.fill(email)
+    def select_gender_female(self) -> None:
+        self.gender_female_button.click()
 
-    def click_signup(self) -> None:
-        self.signup_button.click()
+    def enter_password(self, password: str) -> None:
+        self.signup_password.fill(password)
