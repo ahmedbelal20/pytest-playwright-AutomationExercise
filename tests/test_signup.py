@@ -1,5 +1,4 @@
 from playwright.sync_api import expect, Page
-from time import sleep
 from logging import Logger, getLogger
 
 logger: Logger = getLogger(__name__)
