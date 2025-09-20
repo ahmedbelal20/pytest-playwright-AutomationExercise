@@ -28,3 +28,6 @@ def test_signup_correct(page: Page):
     signup_page = SignupPage(page)
     signup_page.select_gender_male()
     signup_page.enter_password("12345")
+    signup_page.select_birth_day("1")
+    signup_page.select_birth_month("January")
+    signup_page.select_birth_year("2000")
